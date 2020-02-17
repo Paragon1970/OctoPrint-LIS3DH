@@ -24,7 +24,7 @@ $(function() {
 				return [
 					{ name: "LIS3DH", type: "section", layout: "horizontal", children: [
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeArm());", name: "Arm Probe"},
-						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeDown());", name: "Disarm Probe"},
+						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeDisarm());", name: "Disarm Probe"},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdSelfTest());", name: "Self Test", confirm: "You are about to run a self test.",},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdReleaseAlarm());", name: "Release Alarm", confirm: "You are about to release the alarm."},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeBed().split('\\n'));", name: "Probe Bed", confirm: "You are about to probe the bed.",},
@@ -35,7 +35,7 @@ $(function() {
 				return [
 					{ name: "LIS3DH", type: "section", layout: "horizontal", children: [
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeArm());", name: "Arm Probe"},
-						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeDown());", name: "Disarm Probe"},
+						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeDisarm());", name: "Disarm Probe"},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdSelfTest());", name: "Self Test"},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdReleaseAlarm());", name: "Release Alarm"},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeBed().split('\\n'));", name: "Probe Bed"},
