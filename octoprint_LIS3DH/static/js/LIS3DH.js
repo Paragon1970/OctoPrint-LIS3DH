@@ -1,7 +1,7 @@
 /*
  * View model for OctoPrint-LIS3DH
  *
- * Author: jneilliii
+ * Author: jneilliii / SRG
  * License: AGPLv3
  */
 $(function() {
@@ -12,8 +12,8 @@ $(function() {
 		self.controlViewModel = parameters[0];
 		self.settingsViewModel = parameters[1];
 		
-		self.cmdProbeUp = ko.observable();
-		self.cmdProbeDown = ko.observable();
+		self.cmdProbeArm = ko.observable();
+		self.cmdProbeDisarm = ko.observable();
 		self.cmdSelfTest = ko.observable();
 		self.cmdReleaseAlarm = ko.observable();
 		self.cmdProbeBed = ko.observable();
@@ -23,8 +23,8 @@ $(function() {
 			if (self.settingsViewModel.settings.plugins.LIS3DH.confirmation()) {
 				return [
 					{ name: "LIS3DH", type: "section", layout: "horizontal", children: [
-						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeUp());", name: "Probe Up"},
-						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeDown());", name: "Probe Down"},
+						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeArm());", name: "Arm Probe"},
+						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeDown());", name: "Disarm Probe"},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdSelfTest());", name: "Self Test", confirm: "You are about to run a self test.",},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdReleaseAlarm());", name: "Release Alarm", confirm: "You are about to release the alarm."},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeBed().split('\\n'));", name: "Probe Bed", confirm: "You are about to probe the bed.",},
@@ -34,8 +34,8 @@ $(function() {
 			} else {
 				return [
 					{ name: "LIS3DH", type: "section", layout: "horizontal", children: [
-						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeUp());", name: "Probe Up"},
-						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeDown());", name: "Probe Down"},
+						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeArm());", name: "Arm Probe"},
+						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeDown());", name: "Disarm Probe"},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdSelfTest());", name: "Self Test"},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdReleaseAlarm());", name: "Release Alarm"},
 						{type: "javascript", javascript: "OctoPrint.control.sendGcode(self.settings.settings.plugins.LIS3DH.cmdProbeBed().split('\\n'));", name: "Probe Bed"},
@@ -45,8 +45,8 @@ $(function() {
 		};
 		
 		self.onBeforeBinding = function() {
-			self.cmdProbeUp(self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeUp());
-			self.cmdProbeDown(self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeDown());
+			self.cmdProbeUp(self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeArm());
+			self.cmdProbeDown(self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeDisarm());
 			self.cmdSelfTest(self.settingsViewModel.settings.plugins.LIS3DH.cmdSelfTest());
 			self.cmdReleaseAlarm(self.settingsViewModel.settings.plugins.LIS3DH.cmdReleaseAlarm());
 			self.cmdProbeBed(self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeBed());
@@ -54,8 +54,8 @@ $(function() {
 		};
 		
 		self.onEventSettingsUpdated = function (payload) {            
-            self.cmdProbeUp = self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeUp();
-            self.cmdProbeDown = self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeDown();
+            self.cmdProbeUp = self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeArm();
+            self.cmdProbeDown = self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeDisarm();
             self.cmdSelfTest = self.settingsViewModel.settings.plugins.LIS3DH.cmdSelfTest();
             self.cmdReleaseAlarm = self.settingsViewModel.settings.plugins.LIS3DH.cmdReleaseAlarm();
 			self.cmdProbeBed(self.settingsViewModel.settings.plugins.LIS3DH.cmdProbeBed());

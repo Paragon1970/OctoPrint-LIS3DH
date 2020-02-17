@@ -12,7 +12,7 @@ class LIS3DHPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin
 			
 	##-- Settings hooks
 	def get_settings_defaults(self):
-		return dict(cmdProbeUp="M280 P0 S90",cmdProbeDown="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500",confirmation=True)
+		return dict(cmdProbeArm="M280 P0 S90",cmdProbeDisArm="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500",confirmation=True)
 	#	return dict(cmdProbeArm="M42 P14 S255",cmdProbeDisArm="M42 P14 S0",cmdSelfTest="M42 P0 S120",cmdReleaseAlarm="M42 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500",confirmation=True)
 	##-- Template hooks
 	def get_template_configs(self):
@@ -32,7 +32,7 @@ class LIS3DHPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin
 				current=self._plugin_version,
 
 				# update method: pip
-				pip="https://github.com/jneilliii/OctoPrint-LIS3DH/archive/{target_version}.zip"
+				pip="https://github.com/Paragon1970/OctoPrint-LIS3DH/archive/{target_version}.zip"
 			)
 		)
 
