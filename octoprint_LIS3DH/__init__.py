@@ -32,7 +32,7 @@ class LIS3DHPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin
 				current=self._plugin_version,
 
 				# update method: pip
-				pip="https://github.com/Paragon1970/OctoPrint-LIS3DH/archive/{target_version}.zip"
+				pip="https://github.com/Paragon1970/OctoPrint-LIS3DH/release/{target_version}.zip"
 			)
 		)
 
