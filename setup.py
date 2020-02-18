@@ -21,13 +21,13 @@ plugin_version = "0.0.2"
 plugin_description = "Plugin to add control buttons to the control tab of OctoPrint for the LIS3DH."
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "Pargon1970"
+plugin_author = "Paragon1970"
 
 # The plugin's author's mail address.
-plugin_author_email = "Pargon1970@gmail.com"
+plugin_author_email = "Paragon1970@gmail.com"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
-plugin_url = "https://github.com/Pargon1970/OctoPrint-LIS3DH"
+plugin_url = "https://github.com/Paragon1970/OctoPrint-LIS3DH"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data via __plugin_license__ in the plugin module
 plugin_license = "AGPLv3"
