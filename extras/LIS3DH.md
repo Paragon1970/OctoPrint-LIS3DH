@@ -3,11 +3,11 @@ layout: plugin
 
 id: LIS3DH
 title: OctoPrint-LIS3DH
-description: Simple plugin to add LIS3DH controls to the Control tab.
+description: Simple plugin to add LIS3DH Accelerometer probe controls to the Control tab.
 author: Paragon1970
 license: AGPLv3
 
-date: 2017-01-10
+date: 2020-02-18
 
 homepage: https://github.com/Paragon1970/OctoPrint-LIS3DH
 source: https://github.com/Paragon1970/OctoPrint-LIS3DH

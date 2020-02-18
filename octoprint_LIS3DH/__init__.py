@@ -13,7 +13,7 @@ class LIS3DHPlugin(octoprint.plugin.AssetPlugin, octoprint.plugin.TemplatePlugin
 	##-- Settings hooks
 	def get_settings_defaults(self):
 	#	return dict(cmdProbeArm="M280 P0 S90",cmdProbeDisarm="M280 P0 S10",cmdSelfTest="M280 P0 S120",cmdReleaseAlarm="M280 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500",confirmation=True)
-		return dict(cmdProbeArm="M42 P14 S255",cmdProbeDisarm="M42 P14 S0",cmdSelfTest="M42 P0 S120",cmdReleaseAlarm="M42 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500",confirmation=True)
+		return dict(cmdProbeArm="M42 P14 S255",cmdProbeDisarm="M42 P14 S0",cmdManualProbe="M42 P14 S255; G30",cmdReleaseAlarm="M42 P0 S160",cmdProbeBed="G29",cmdSaveSettings="M500",confirmation=True)
 	##-- Template hooks
 	def get_template_configs(self):
 		return [dict(type="settings",custom_bindings=False),dict(type="controls",custom_bindings=False)]
